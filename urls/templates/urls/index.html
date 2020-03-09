@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h1>URL Shortener</h1>
+    </div>
+
+    <div>
+        <form action="/" method="post" class="form-inline">
+            {% csrf_token %}
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="url" class="sr-only">Your url here...</label>
+                <input type="text" name="original_url" value="{{original_url}}" class="form-control" id="url" placeholder="Your url here...">
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-2">Shorten</button>
+        </form>
+    </div>
+
+    {% if url.shortened_url %}
+    <div>
+        Shortened url: <a href="{{shortened_url}}">{{shortened_url}}</a>
+    </div>
+    {% endif %}
+</body>
+</html>
