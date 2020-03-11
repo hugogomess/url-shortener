@@ -22,9 +22,15 @@
         </form>
     </div>
 
+    {% if error %}
+    <div>
+        <p>{{error}}</p>
+    </div>
+    {% endif %}
+
     {% if url.shortened_url %}
     <div>
-        Shortened url: <a href="{{shortened_url}}">{{shortened_url}}</a>
+        Shortened url: <a target="_blank" href="{{url.shortened_url}}">{{request.build_absolute_uri}}{{url.shortened_url}}</a>
     </div>
     {% endif %}
 </body>
