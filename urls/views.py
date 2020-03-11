@@ -31,8 +31,9 @@ def index(request):
 
                 return render(request, 'urls/index.html', {'url': url})
         else:
+            url = Url(original_url=original_url)
             error = 'Please submit a valid url!'
-            return render(request, 'urls/index.html', {'error': error})
+            return render(request, 'urls/index.html', {'error': error, 'url': url})
     
 
 def url_redirect(request, shortened_url):

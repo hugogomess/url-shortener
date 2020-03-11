@@ -2,6 +2,11 @@
 
 It's an url shortener made with python and django.
 
+**Demo**
+![Alt text](demo/Demo-01.png)
+![Alt text](demo/Demo-02.png)
+![Alt text](demo/Demo-03.png)
+
 ## Installation
 
 First you need to install [Python 3.7+](https://www.python.org/downloads/) and Pip
