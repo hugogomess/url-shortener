@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
 from .models import Url
@@ -34,3 +34,12 @@ def index(request):
             error = 'Please submit a valid url!'
             return render(request, 'urls/index.html', {'error': error})
     
+
+def url_redirect(request, shortened_url):
+    url = get_object_or_404(Url, shortened_url=shortened_url)
+    original_url = url.original_url
+
+    if (original_url[:4].lower() != 'http'):
+        original_url = 'http://' + original_url
+	
+    return redirect(original_url)
