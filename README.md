@@ -1,6 +1,6 @@
 # URL Shortener
 
-It's an url shortener made with python and django.
+Url shortener made with python and django.
 
 **Demo**
 ![Alt text](demo/Demo-01.png)
